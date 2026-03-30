@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Story ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #111;
+    color: #fff;
+  }
+
+  .section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .image-row {
+  		display: flex;
+ 		justify-content: center;
+  		gap: 15px; /* space between images */
+  		flex-wrap: wrap; /* makes it responsive */
+		margin-top:30px;
+}
+
+	.image-row img {
+		width:25%;
+  max-width:480px ;
+  height: auto;
+		object-fit: cover;
+  border-radius: 15px;
+}
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  p {
+    max-width: 600px;
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  .final {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Section 1 -->
+<div class="section">
+  <h1>The Day We Met</h1>
+  <div class="image-row">
+  <img src="C:\Users\himan\Downloads\Del.jpg" alt="First memory">
+  <img src="C:\Users\himan\Downloads\del2.jpg" alt="First memory">
+  <img src="C:\Users\himan\Downloads\del3.jpg" alt="First memory">
+  </div>
+  	<p>
+   Who would've thought that the first moment we shared together would turn out to be such a beautiful start to our pristine marriage
+  </p>
+</div>
+
+<!-- Section 2 -->
+<div class="section">
+  <h1>My favourite</h1>
+  <div class="image-row">
+  <img src="C:\Users\himan\Downloads\del4.jpg" alt="Fav memory" >
+  <img src="C:\Users\himan\Downloads\del5.jpg" alt="First memory">
+  <img src="C:\Users\himan\Downloads\del6.jpg" alt="First memory">
+  </div>
+  <p>
+    Somewhere between laughing and growing together, you became my favourite person
+  </p>
+</div>
+
+<!-- Section 3 -->
+<div class="section">
+  <h1>My babyyyyyy</h1>
+  <div class="image-row">
+  <img src="C:\Users\himan\Downloads\del7.jpg" alt="Fav memory" >
+  <img src="C:\Users\himan\Downloads\del8.jpg" alt="Fav memory" >
+<img src="C:\Users\himan\Downloads\del9.jpg" alt="Fav memory" >
+  </div>
+  <p>
+    Every time you send me something, it makes me melt, and I love you so much
+  </p>
+</div>
+
+<!-- Final Section -->
+<div class="section final">
+  <h1>And This Is Just The Beginning...</h1>
+  <p>
+    No matter where life takes us, I know one thing, that you are my home and 
+    I want you by my side through it all. ❤️
+  </p>
+</div>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+
+  function revealSections() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      if(sectionTop < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealSections);
+  revealSections();
+</script>
+
+</body>
+</html>
